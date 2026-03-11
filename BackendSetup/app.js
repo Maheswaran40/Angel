@@ -7,6 +7,9 @@ dotenv.config()
 const connectDB=require("./Config/db")
 connectDB()
 
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
+
 app.use(express.json({ limit: "5mb" }))
 
 const routes=require("./routers/routes")
